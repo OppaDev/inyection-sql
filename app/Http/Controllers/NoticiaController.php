@@ -9,7 +9,9 @@ class NoticiaController extends Controller
 {
     public function index()
     {
-        return view('n.index');
+        $noticias = Noticia::get();
+
+        return view('n.index', ['noticias' => $noticias]);
     }
 
     function guardar(Request $request)
