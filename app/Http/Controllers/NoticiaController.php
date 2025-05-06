@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Noticia;
 use Illuminate\Http\Request;
 
 class NoticiaController extends Controller
@@ -13,6 +14,9 @@ class NoticiaController extends Controller
 
     function guardar(Request $request)
     {
-        return $request;
+        $noticia = new Noticia();
+        $noticia->contenido = $request-> contenido;
+        $noticia->save();
+        return redirect()-> route('n.index');
     }
 }

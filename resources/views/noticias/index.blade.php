@@ -17,7 +17,7 @@
         <form action="{{ route('n.guardar') }}" method="POST">
            @csrf
             <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                <label for="exampleFormControlTextarea1" class="form-label">Ingrese el comentario</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Guardar</button>
