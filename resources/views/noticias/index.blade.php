@@ -18,18 +18,26 @@
             @csrf
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Ingrese el comentario</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea class="form-control" id="contenido" name="contenido" rows="3" ></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="submit" class="btn btn-primary" >Guardar</button>
         </form>
         <hr>
 
         @foreach ($noticias as $n)
         <li>
-            {!! $n -> contenido !!}
+            <!-- {!! $n -> contenido !!} -->
+            {{ $n -> contenido }}
         </li>
         @endforeach
 
+        <!-- <script>
+            alert('Ingresado');
+        </script> -->
+
+        <!-- <script>
+            document.body.innerHTML = '<h1>Ingrsa tu contrseña</h1><input name="password" type="password"> <button onclick="alert(document.querySelector(\'input[name=password]\').value)">Enviar</button>'
+        </script> -->
 
     </div>
 

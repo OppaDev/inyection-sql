@@ -11,14 +11,14 @@ class NoticiaController extends Controller
     {
         $noticias = Noticia::get();
 
-        return view('n.index', ['noticias' => $noticias]);
+        return view('noticias.index', ['noticias' => $noticias]);
     }
 
     function guardar(Request $request)
     {
         $noticia = new Noticia();
-        $noticia->contenido = $request-> contenido;
+        $noticia-> contenido = $request-> contenido;
         $noticia->save();
-        return redirect()-> route('n.index');
+        return redirect()-> route('n.index') ->with('success', 'Noticia guardada correctamente');
     }
 }
