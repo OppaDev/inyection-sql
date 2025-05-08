@@ -31,7 +31,7 @@ Route::post('login-demo', [LoginController::class, 'login'])->name('login.demo.s
 // Ruta de dashboard (protegida, solo accesible si estás logueado)
 Route::get('dashboard-demo', function () {
     if (Auth::check()) { // Usar Auth::check()
-        return "¡Bienvenido al Dashboard, " . Auth::user()->name . "! (ID: " . Auth::id() . ")"; // Usar Auth::user() y Auth::id()
+        return redirect()->route('n.index'); // Redirigir a la ruta de noticias
     }
     return redirect()->route('login.demo.form')->with('error', 'Por favor, inicia sesión para acceder al dashboard.');
 })->name('dashboard.demo');
